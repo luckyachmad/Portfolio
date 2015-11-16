@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+         <property name="hbm2ddl.auto">update</property> <!-- untuk generate database ubah "update" dengan "create"-->
+        
+        <mapping class="inv.com.entity.Customer"/>
+        <mapping class="inv.com.entity.Supplier"/>
+        <mapping class="inv.com.entity.SalesOrder"/>
+        <mapping class="inv.com.entity.SalesOrderDetail"/>
+        <mapping class="inv.com.entity.PurchaseOrder"/>
+        <mapping class="inv.com.entity.PurchaseOrderDetail"/>
+        <mapping class="inv.com.entity.Product"/>
+        <mapping class="inv.com.entity.Role"/>
+        <mapping class="inv.com.entity.User"/>
+        <mapping class="inv.com.entity.ImageDetail"/>
+        <mapping class="inv.com.entity.Employee"/>
+        </session-factory>
+    
+</hibernate-configuration>
