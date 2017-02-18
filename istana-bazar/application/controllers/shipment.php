@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Shipment extends CI_Controller {
 
   //make private variable
+  private $username = '';
+  private $apiKey = '';
 
   public function index()
   {
@@ -16,6 +18,7 @@ class Shipment extends CI_Controller {
     //get origin from input
     $origin = $this->input->post('origin');
     //set origin an data to send
+    $urlOrigin = "http://localhost:8889/tracing/istanabazar/origin/key/{$origin}";
     //set data to send
     $postData = array(
       "username" => $this->username,
@@ -45,6 +48,7 @@ class Shipment extends CI_Controller {
     //get destination from input
     $destination = $this->input->post('destination');
     //get url destination
+    $urlOrigin = "http://localhost:8889/tracing/istanabazar/dest/key/{$destination}";
     //set data to send
     $postData = array(
       "username" => $this->username,
@@ -77,6 +81,7 @@ class Shipment extends CI_Controller {
      //get destination from input
     $weight = $this->input->post('weight');
     //get url to check fare result
+    $urlOrigin = "http://localhost:8889/tracing/istanabazar/price/";
     //set data to send
     $postData = array(
       "username" => $this->username,
